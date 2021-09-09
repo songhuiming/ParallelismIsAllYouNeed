@@ -6,6 +6,7 @@ When BERT [1] model was introduced in 2018, it has about 110 million parameters 
 
 ![pic2](https://github.com/songhuiming/ParallelismIsAllYouNeed/blob/main/figure/Picture2.png)
 
+![pic3](https://github.com/songhuiming/ParallelismIsAllYouNeed/blob/main/figure/Picture3.png)
 
 
 ## 1. [By pytorch `multiprocess.spawn`](https://github.com/songhuiming/ParallelismIsAllYouNeed/blob/main/1.multiprocessing.distributed.py)
