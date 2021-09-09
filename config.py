@@ -30,7 +30,7 @@ def config():
     args['learning_rate'] = 1e-5
     args['num_workers'] = 0
 
-    parser = argparse.ArgumentParser(description='PyTorch Kaggle Training')
+    parser = argparse.ArgumentParser(description='PyTorch Parallelism Training')
     parser.add_argument('--distname',default='dist',help='distribution name to save the output')
     parser.add_argument('--local_rank',default=-1,type=int,help='node(GPU) rank for ddp')
 
