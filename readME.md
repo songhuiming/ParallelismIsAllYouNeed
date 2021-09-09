@@ -2,6 +2,12 @@
 
 When BERT [1] model was introduced in 2018, it has about 110 million parameters for base and 345 million for large model. Cross lingual model XLM-R [2] has 550M parameters. GPT-2-xl [3] has 1.5 billion parameters while GPT-3 [4] has about 175 billion parameters. Text-To-Text Transfer Transformer (T5) [5] has 11 billion parameters. As the model becomes bigger and bigger, it brings new challenges: it takes more and more time to train or fine tune the model; some models are too big to be loaded into one GPU because of limited GPU memory; or even if it can be loaded into GPU, the batch size has to be set as very small since the parameters and gradients need to be saved for parameter update and it will result in lacking of GPU memory.
 
+![pic1](https://github.com/songhuiming/ParallelismIsAllYouNeed/blob/main/figure/Picture1.png)
+
+![pic2](https://github.com/songhuiming/ParallelismIsAllYouNeed/blob/main/figure/Picture2.png)
+
+
+
 ## 1. [By pytorch `multiprocess.spawn`](https://github.com/songhuiming/ParallelismIsAllYouNeed/blob/main/1.multiprocessing.distributed.py)
 pytorch `multiprocess.spawn` will create the processes and pass the local_rank as well as the arguments to it. You can run python from command line to initialize one process and then spawn multiple process inside the code.
 
