@@ -106,8 +106,6 @@ def hvd_train(train_dataloader, model, criterion, optimizer, epoch, local_rank, 
         model.zero_grad()
         reduced_loss = hvd.allreduce(loss)
         reduced_accuracy = hvd.allreduce(accuarcy)
-        if step%300==0:
-            print(f"After reduce, on rank {hvd.local_rank()}, loss is {reduced_loss:6.5f}, acc is {reduced_accuracy:6.5f}")
         total_loss = total_loss + reduced_loss.item()
         total_accuracy = total_accuracy + reduced_accuracy.item()
         # compute gradient and do SGD backpropagation
