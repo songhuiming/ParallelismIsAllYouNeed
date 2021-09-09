@@ -131,7 +131,10 @@ It mainly needs these steps:
 
 ## 6. [gradients accumulate]()
 1. split the mini-batch data into n steps defined in the accumulation steps
-2. for each split, 
+2. for each split, calc forward pred and loss backpropagation
+3. accumulatively update the parameters
+
+
 ```python
     for step, batch in enumerate(train_dataloader):
         split_size = args['train_batch_size'] / args['gradient_accumulation_steps']
